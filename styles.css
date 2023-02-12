@@ -1,0 +1,151 @@
+/* GLOBAL */
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+h1 {
+    color: hsl(234, 12%, 34%)
+}
+
+h2 {
+    color: hsl(234, 12%, 34%);
+    font-weight: 400;
+}
+
+p {
+    color: hsl(229, 6%, 66%);
+    font-weight: 200;
+}
+
+/* ---------- */
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 20% 1fr;
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.introduction {
+    margin: 2% 0 2% 0;
+    max-width: 40%;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.title span {
+    font-weight: 600;
+}
+
+.container {
+    width: 80%;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-items: center;
+    grid-template-areas:
+        ".          team-builder          ."
+        "supervisor team-builder calculator"
+        "supervisor    karma     calculator"
+        ".             karma              .";
+}
+
+.box {
+    border-radius: 5px;
+}
+
+.inner {
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 6px 12px 0px rgba(102, 108, 179, 0.23);
+    display: grid;
+    padding: 20px;
+}
+
+.role {
+    font-size: 20px;
+    margin: 0;
+}
+
+.icon {
+    justify-self: end;
+}
+
+.supervisor {
+    border-top: 5px solid hsl(180, 62%, 55%);
+    grid-area: supervisor;
+}
+
+.team-builder {
+    border-top: 5px solid hsl(0, 78%, 62%);
+    grid-area: team-builder;
+}
+
+.karma {
+    border-top: 5px solid hsl(34, 97%, 64%);
+    grid-area: karma;
+}
+
+.calculator {
+    border-top: 5px solid hsl(212, 86%, 64%);
+    grid-area: calculator;
+}
+
+
+@media (max-width: 1024px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "supervisor     team-builder"
+            "karma          calculator";
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .introduction {
+        max-width: 70%;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "supervisor"
+            "team-builder"
+            "karma"
+            "calculator"
+    }
+
+    .box {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .box {
+        width: 100%;
+    }
+
+}
