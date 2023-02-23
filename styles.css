@@ -121,7 +121,7 @@ body {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
     .introduction {
         max-width: 70%;
